@@ -29,7 +29,7 @@ export default { name: 'ThirdPage' };
 h2 { font-size: 5vw; font-weight: bold; margin-bottom: 3vw; }
 .section { margin-bottom: 6vw; }
 .images { display: flex; gap: 2vw; flex-wrap: wrap; margin: 2vw 0; }
-.images img { width: 30vw; height: auto; border-radius: 0.5vw; }
+.images img { width: 75vw; height: auto; border-radius: 0.5vw; }
 .single-image { width: 80vw; height: auto; margin: 2vw 0; border-radius: 0.5vw; }
 h3 { font-size: 4vw; margin-bottom: 1vw; }
 p { font-size: 3.5vw; line-height: 1.4; }

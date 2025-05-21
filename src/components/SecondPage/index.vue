@@ -19,14 +19,14 @@
     <section class="section">
       <h3>主题团日 - 春季学期 “网络平台下的身份裂变”</h3>
       <p>参与人数：23/24</p>
+      <p class="text">
+        自 43 支部开展党团日活动，围绕 “网络平台下的身份裂变”，经情景剧、讨论等形式，剖析影响、成因并探索应对策略。对“数字公民”的能力培养：从认知自我、管理关系、抵抗异化到预见未来，为大学生在虚实交织的生存环境中提供行动参考。
+      </p>
       <div class="images">
         <img src="~@/assets/report-images/tuanri-spring1.jpg" alt="春季活动图1" />
         <img src="~@/assets/report-images/tuanri-spring2.jpg" alt="春季活动图2" />
         <img src="~@/assets/report-images/tuanri-spring3.jpg" alt="春季活动图3" />
       </div>
-      <p class="text">
-        自 43 支部开展党团日活动，围绕 “网络平台下的身份裂变”，经情景剧、讨论等形式，剖析影响、成因并探索应对策略。对“数字公民”的能力培养：从认知自我、管理关系、抵抗异化到预见未来，为大学生在虚实交织的生存环境中提供行动参考。
-      </p>
     </section>
   </div>
 </template>
@@ -37,7 +37,7 @@ export default { name: 'SecondPage' };
 .page { padding: 5vw; }
 .section { margin-bottom: 6vw; }
 .images { display: flex; gap: 2vw; flex-wrap: wrap; margin: 2vw 0; }
-.images img { width: 30vw; height: auto; border-radius: 0.5vw; }
+.images img { width: 75vw; height: auto; border-radius: 0.5vw; }
 .text { font-size: 3.5vw; line-height: 1.4; }
 h2 { font-size: 5vw; font-weight: bold; margin-bottom: 3vw; }
 h3 { font-size: 4vw; margin-bottom: 1vw; }

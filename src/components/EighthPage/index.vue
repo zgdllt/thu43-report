@@ -19,5 +19,5 @@ export default { name: 'EighthPage' };
 h2 { font-size: 5vw; font-weight: bold; margin-bottom: 3vw; }
 .intro { font-size: 3.5vw; line-height: 1.6; margin-bottom: 4vw; }
 .images { display: flex; gap: 2vw; flex-wrap: wrap; }
-.images img { width: 30vw; height: auto; border-radius: 0.5vw; }
+.images img { width: 75vw; height: auto; border-radius: 0.5vw; }
 </style>

@@ -36,7 +36,7 @@ h2 { font-size: 5vw; font-weight: bold; margin-bottom: 3vw; }
 .section { margin-bottom: 6vw; }
 .activities, .awards { font-size: 3.5vw; line-height: 1.6; list-style: disc inside; margin-bottom: 2vw; }
 .images { display: flex; gap: 2vw; flex-wrap: wrap; }
-.images img { width: 38vw; height: auto; border-radius: 0.5vw; }
+.images img { width: 90vw; height: auto; border-radius: 0.5vw; }
 h3 { font-size: 4vw; margin-bottom: 1vw; }
 p { font-size: 3.5vw; line-height: 1.6; }
 </style>
