@@ -1,5 +1,8 @@
 <template>
-  <div id="app">
+  <div id="app"
+    @touchstart.native="handleTouchStart"
+    @touchend.native="handleTouchEnd"
+  >
     <FirstPage class="delay box" v-if="step === 1" @start="next" @wheel.native="handleWheel"></FirstPage>
     <SecondPage
       class="delay box"
@@ -52,6 +55,7 @@ export default {
     return {
       step: 1,
       mask: true,
+      touchStartY: 0,
     };
   },
   computed: {
@@ -78,6 +82,19 @@ export default {
     },
   },
   methods: {
+    handleTouchStart(e) {
+      this.touchStartY = e.touches[0].clientY;
+    },
+    handleTouchEnd(e) {
+      const endY = e.changedTouches[0].clientY;
+      const deltaY = this.touchStartY - endY;
+      const threshold = 50;
+      if (deltaY > threshold) {
+        this.next();
+      } else if (deltaY < -threshold) {
+        this.prev();
+      }
+    },
     prev() {
       if (this.step > 1) this.step--;
     },
