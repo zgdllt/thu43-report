@@ -1,22 +1,24 @@
 <template>
-  <div id="app" @click.capture.stop="next">
-    <FirstPage class="delay box" v-if="step === 1" @start="next"></FirstPage>
+  <div id="app">
+    <FirstPage class="delay box" v-if="step === 1" @start="next" @wheel.native="handleWheel"></FirstPage>
     <SecondPage
       class="delay box"
       v-if="step === 2"
       @click.native="next"
+      @wheel.native="handleWheel"
     ></SecondPage>
-    <ThirdPage class="delay box" v-if="step === 3" @next="next"></ThirdPage>
-    <ForthPage class="delay box" v-if="step === 4" @next="next"></ForthPage>
-    <FifthPage class="delay box" v-if="step === 5" @next="next"></FifthPage>
-    <SixthPage class="delay box" v-if="step === 6" @next="next"></SixthPage>
+    <ThirdPage class="delay box" v-if="step === 3" @next="next" @wheel.native="handleWheel"></ThirdPage>
+    <ForthPage class="delay box" v-if="step === 4" @next="next" @wheel.native="handleWheel"></ForthPage>
+    <FifthPage class="delay box" v-if="step === 5" @next="next" @wheel.native="handleWheel"></FifthPage>
+    <SixthPage class="delay box" v-if="step === 6" @next="next" @wheel.native="handleWheel"></SixthPage>
     <SeventhPage
       class="delay box"
       v-if="step === 7"
       @next="next"
+      @wheel.native="handleWheel"
     ></SeventhPage>
-    <EighthPage class="delay box" v-if="step === 8" @next="next"></EighthPage>
-    <NinthPage class="delay box" v-if="step === 9" @next="next"></NinthPage>
+    <EighthPage class="delay box" v-if="step === 8" @next="next" @wheel.native="handleWheel"></EighthPage>
+    <NinthPage class="delay box" v-if="step === 9" @next="next" @wheel.native="handleWheel"></NinthPage>
     <div v-if="step !== 9" class="footer"></div>
     <div :class="handleMask"></div>
   </div>
@@ -76,6 +78,21 @@ export default {
     },
   },
   methods: {
+    prev() {
+      if (this.step > 1) this.step--;
+    },
+    handleWheel(e) {
+      const box = e.currentTarget;
+      if (e.deltaY > 0) {
+        if (box.scrollTop + box.clientHeight >= box.scrollHeight - 1) {
+          this.next();
+        }
+      } else if (e.deltaY < 0) {
+        if (box.scrollTop <= 0) {
+          this.prev();
+        }
+      }
+    },
     next() {
       if (this.step === 9) {
         return;
@@ -93,12 +110,12 @@ body {
   margin: 0;
   height: 100vh;
   color: white;
-  overflow: hidden;
+  overflow-y: auto;
 }
 #app {
   background-image: linear-gradient(#1f9ef4, #a1e1ff);
   height: 100vh;
-  overflow: hidden;
+  overflow-y: auto;
   font-family: "Microsoft YaHei", 微软雅黑, "Microsoft JhengHei", 华文细黑,
     STHeiti, MingLiu;
   font-size: 4vw;
@@ -106,7 +123,8 @@ body {
 .box {
   padding: 5vw;
   padding-top: 10vw;
-  overflow: hidden;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .delay {
