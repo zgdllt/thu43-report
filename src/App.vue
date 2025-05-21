@@ -2,6 +2,7 @@
   <div id="app"
     @touchstart.native="handleTouchStart"
     @touchend.native="handleTouchEnd"
+    @click.native="handleTap"
   >
     <FirstPage class="delay box" v-if="step === 1" @start="next" @wheel.native="handleWheel"></FirstPage>
     <SecondPage
@@ -21,7 +22,11 @@
       @wheel.native="handleWheel"
     ></SeventhPage>
     <EighthPage class="delay box" v-if="step === 8" @next="next" @wheel.native="handleWheel"></EighthPage>
-    <NinthPage class="delay box" v-if="step === 9" @next="next" @wheel.native="handleWheel"></NinthPage>
+    <NinthPage class="delay box" v-if="step === 9"
+      @next="next"
+      @wheel.native="handleWheel"
+      @restart="goStart"
+    ></NinthPage>
     <div v-if="step !== 9" class="footer"></div>
     <div :class="handleMask"></div>
   </div>
@@ -94,6 +99,14 @@ export default {
       } else if (deltaY < -threshold) {
         this.prev();
       }
+    },
+    // 点击翻页（仅限未到最后一页）
+    handleTap() {
+      if (this.step < 9) this.next();
+    },
+    // 回到开头
+    goStart() {
+      this.step = 1;
     },
     prev() {
       if (this.step > 1) this.step--;
