@@ -55,14 +55,14 @@
     </section>
     <section class="section">
       <h3>DA学生节</h3>
+      <p><strong>台下：</strong></p>
+      <p>李奕欧、张熠辉两位同学主动报名学生节工作人员，助力学生节举办</p>
       <p><strong>台上：</strong></p>
       <p>孟特拉同学入选六名主持人之一</p>
       <p>孟特拉、陈梓心、畅雅琪三位同学入选啦啦操队并参演学生节热场舞蹈节目《Neon Pulse》</p>
       <img class="single-image" src="~@/assets/report-images/da-festival.jpg" alt="DA学生节" />
       <p>张潇文同学作为女主角出演新生舞台剧《献给阿尔吉侬的花束》</p>
       <img class="single-image" src="~@/assets/report-images/da-festival1.jpg" alt="DA学生节" />
-      <p><strong>台下：</strong></p>
-      <p>李奕欧、张熠辉两位同学主动报名学生节工作人员，助力学生节举办</p>
     </section>
   </div>
 </template>

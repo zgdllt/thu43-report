@@ -5,9 +5,9 @@
       自43支部以支部成员为核心元素打造了班徽、班旗等专属符号文化印象；依托公众号“THU自43”，发布推送共17篇，最高单篇阅读量500+，13篇推送破百；其中两篇主题团日推送已投稿校级公众号“THU探求纵坐标”，广受好评。
     </p>
     <div class="images">
+      <img src="~@/assets/report-images/pub3.jpg" alt="宣传图片3" />
       <img src="~@/assets/report-images/pub1.jpg" alt="宣传图片1" />
       <img src="~@/assets/report-images/pub2.jpg" alt="宣传图片2" />
-      <img src="~@/assets/report-images/pub3.jpg" alt="宣传图片3" />
     </div>
   </div>
 </template>
