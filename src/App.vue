@@ -2,13 +2,12 @@
   <div id="app"
     @touchstart.native="handleTouchStart"
     @touchend.native="handleTouchEnd"
-    @click.native="handleTap"
+    @click.capture.stop="handleTap"
   >
     <FirstPage class="delay box" v-if="step === 1" @start="next" @wheel.native="handleWheel"></FirstPage>
     <SecondPage
       class="delay box"
       v-if="step === 2"
-      @click.native="next"
       @wheel.native="handleWheel"
     ></SecondPage>
     <ThirdPage class="delay box" v-if="step === 3" @next="next" @wheel.native="handleWheel"></ThirdPage>
