@@ -1,73 +1,37 @@
 <template>
-  <div>
-    <div class="a">
-      这一年我们
-      <span class="value"> {{ maxMonth[0] }} </span>月 说的话最多 有<span
-        class="value"
-      >
-        {{ maxMonth[1] }} </span
-      >条
-    </div>
-    <div ref="chart" class="chart"></div>
+  <div class="page">
+    <h2>Part Five 支部事业</h2>
+    <section class="section">
+      <h3>团队训练营 & 班级风采展示会</h3>
+      <img class="single-image" src="~@/assets/report-images/training-camp.jpg" alt="训练营展示" />
+      <p>初聚于此，让我们用自己的方式说：“Hello ,Tsinghua!”</p>
+    </section>
+    <section class="section">
+      <h3>我与清华的初见</h3>
+      <img class="single-image" src="~@/assets/report-images/first-meet.jpg" alt="初见清华" />
+      <p>原来你是这样的清华，原来你是这样的肆叁。</p>
+    </section>
+    <section class="section">
+      <h3>KTV | 团建</h3>
+      <img class="single-image" src="~@/assets/report-images/ktv.jpg" alt="KTV 团建" />
+      <p>放飞自我，传递快乐，嗨起来！</p>
+    </section>
+    <section class="section">
+      <h3>第一次生日会兼第一次班级团建</h3>
+      <img class="single-image" src="~@/assets/report-images/birthday1.jpg" alt="生日会" />
+      <p>后军训时代的第一次团建，“让我们对所有的烦恼都说拜拜”。</p>
+    </section>
+    <!-- 更多活动同理，示例省略 -->
   </div>
 </template>
-
 <script>
-import * as echarts from "echarts";
-import { monthGroup } from "@/data.json";
-export default {
-  data() {
-    return {
-      myChart: undefined,
-      arr: monthGroup,
-    };
-  },
-  computed: {
-    maxMonth() {
-      let max = this.arr[0];
-      for (let i of this.arr) {
-        if (i[1] > max[1]) {
-          max = i;
-        }
-      }
-      return max;
-    },
-  },
-  mounted() {
-    this.myChart = echarts.init(this.$refs.chart);
-    this.myChart.setOption({
-      tooltip: {},
-      xAxis: {},
-      yAxis: {},
-      series: [
-        {
-          type: "bar",
-          data: this.arr,
-          itemStyle: {
-            color: "#ebf45f",
-          },
-          clip :false
-        },
-      ],
-    });
-  },
-};
+export default { name: 'SeventhPage' };
 </script>
-
 <style scoped>
-.chart {
-  width: 100vw;
-  height: 50vh;
-  animation-name: slide-top;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-fill-mode: backwards;
-}
-.a {
-  padding-top: 15vh;
-  animation-name: slide-top;
-  animation-duration: 1s;
-  animation-delay: 0.5s;
-  animation-fill-mode: backwards;
-}
+.page { padding: 5vw; }
+h2 { font-size: 5vw; font-weight: bold; margin-bottom: 3vw; }
+.section { margin-bottom: 6vw; }
+.single-image { width: 80vw; height: auto; margin: 2vw 0; border-radius: 0.5vw; }
+h3 { font-size: 4vw; margin-bottom: 1vw; }
+p { font-size: 3.5vw; line-height: 1.6; }
 </style>

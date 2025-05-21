@@ -1,75 +1,23 @@
 <template>
-  <div>
-    <div class="a">
-      这一年我们最喜欢在
-      <span class="value"> {{ maxMonth[0] }} </span>点聊天 说的话 有<span
-        class="value"
-      >
-        {{ maxMonth[1] }} </span
-      >条
+  <div class="page">
+    <h2>Part Six 宣传工作</h2>
+    <p class="intro">
+      自43支部以支部成员为核心元素打造了班徽、班旗等专属符号文化印象；依托公众号“THU自43”，发布推送共17篇，最高单篇阅读量500+，13篇推送破百；其中两篇主题团日推送已投稿校级公众号“THU探求纵坐标”，广受好评。
+    </p>
+    <div class="images">
+      <img src="~@/assets/report-images/pub1.jpg" alt="宣传图片1" />
+      <img src="~@/assets/report-images/pub2.jpg" alt="宣传图片2" />
+      <img src="~@/assets/report-images/pub3.jpg" alt="宣传图片3" />
     </div>
-    <div ref="chart" class="chart"></div>
   </div>
 </template>
-
 <script>
-import * as echarts from "echarts";
-import { hourGroup } from "@/data.json";
-export default {
-  data() {
-    return {
-      myChart: undefined,
-      arr: hourGroup,
-    };
-  },
-  computed: {
-    maxMonth() {
-      let max = this.arr[0];
-      for (let i of this.arr) {
-        if (i[1] > max[1]) {
-          max = i;
-        }
-      }
-      return max;
-    },
-  },
-  mounted() {
-    this.myChart = echarts.init(this.$refs.chart);
-    this.myChart.setOption({
-      tooltip: {},
-      xAxis: {},
-      yAxis: {},
-      series: [
-        {
-          type: "line",
-          data: this.arr,
-          itemStyle: {
-            color: "#d5cede",
-          },
-          clip: false,
-          symbol: "none",
-        },
-      ],
-      animationDuration: 5000,
-    });
-  },
-};
+export default { name: 'EighthPage' };
 </script>
-
 <style scoped>
-.chart {
-  width: 100vw;
-  height: 50vh;
-  animation-name: slide-top;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-fill-mode: backwards;
-}
-.a {
-  padding-top: 15vh;
-  animation-name: slide-top;
-  animation-duration: 1s;
-  animation-delay: 0.5s;
-  animation-fill-mode: backwards;
-}
+.page { padding: 5vw; }
+h2 { font-size: 5vw; font-weight: bold; margin-bottom: 3vw; }
+.intro { font-size: 3.5vw; line-height: 1.6; margin-bottom: 4vw; }
+.images { display: flex; gap: 2vw; flex-wrap: wrap; }
+.images img { width: 30vw; height: auto; border-radius: 0.5vw; }
 </style>

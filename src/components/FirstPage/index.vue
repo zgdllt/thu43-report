@@ -1,127 +1,43 @@
 <template>
-  <div class="box">
-    <div class="title">
-      <div class="a">2021</div>
-      <div class="b">
-        WECHAT
-        <br />
-        REPORT
-      </div>
-      <div class="c">年度聊天报告</div>
-    </div>
-    <div class="human">
-      <div class="boy">
-        <img class="a" src="@/assets/images/boy.png" />
-        <img class="b" src="@/assets/images/cloud1.png" />
-      </div>
-      <div class="girl">
-        <img class="a" src="@/assets/images/girl.png" />
-        <img class="b" src="@/assets/images/cloud2.png" />
-      </div>
-    </div>
-    <div class="star">
-      <div class="circle" @click="$emit('start')">
-        <div class="left" @click="$emit('start')">→</div>
-      </div>
-      <div class="label" @click="$emit('start')">点击开启</div>
-    </div>
+  <div class="cover-page">
+    <!-- 封面标题 -->
+    <h1 class="title">It Takes Three | 我们一起走过的肆叁年华</h1>
+    <!-- 置顶推送 -->
+    <p class="pin">自43班2024-2025年工作总结</p>
+    <!-- 封面背景图，需将封面图放在 src/assets/report-images/cover.jpg -->
+    <!-- <img class="cover-image" src="~@/assets/report-images/cover.jpg" alt="封面" /> -->
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'FirstPage'
+};
 </script>
 
 <style scoped>
+.cover-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
 .title {
-  color: white;
-  line-height: 1;
-  display: grid;
-  grid-template-columns: max-content 1fr;
+  font-size: 6vw;
+  font-weight: bold;
+  margin-bottom: 2vw;
 }
-.title .a {
-  font-size: 25vw;
+.pin {
+  font-size: 4vw;
+  font-weight: bold;
+  margin-bottom: 5vw;
+  color: #ffe58a;
 }
-.title .b {
-  padding-top: 1em;
-  font-size: 5vw;
-}
-.title .c {
-  font-size: 10vw;
-}
-.human .boy {
-  position: relative;
-  top: -10vh;
-  animation: up-down 2s ease-in-out infinite both;
-}
-.human .girl {
-  position: relative;
-  top: -20vh;
-  left: 30vw;
-  animation: up-down 2s ease-in-out infinite both;
-}
-@keyframes up-down {
-  0% {
-    transform: translateY(1vh);
-  }
-  50% {
-    transform: translateY(0vh);
-  }
-  100% {
-    transform: translateY(1vh);
-  }
-}
-.human .boy .a {
-  width: 27vw;
-  position: relative;
-  left: 10vw;
-  top: 15vh;
-  z-index: 2;
-}
-.human .boy .b {
-  width: 50vw;
-  position: relative;
-  left: -30vw;
-  top: 20vh;
-}
-
-.human .girl .a {
-  width: 57vw;
-  position: relative;
-  left: 5vw;
-  top: 15vh;
-  z-index: 2;
-}
-.human .girl .b {
-  width: 50vw;
-  position: relative;
-  left: 5vw;
-  top: -5vh;
-}
-
-.star {
-  position: absolute;
-  bottom: 10vh;
-  left: calc(50vw - 15vw);
-}
-.star .circle {
-  width: 30vw;
-  height: 30vw;
-  border-radius: 100%;
-  background-color: #f04b3f;
-  text-align: center;
-  font-size: 25vw;
-  color: white;
-  animation: hvr-ripple-out 2s ease-in-out infinite alternate both;
-}
-@keyframes hvr-ripple-out {
-  100% {
-    transform: scale(1.05);
-  }
-}
-.star .label {
-  font-size: 5vw;
-  text-align: center;
-  font-weight: lighter;
+.cover-image {
+  width: 80vw;
+  height: auto;
+  border-radius: 1vw;
 }
 </style>

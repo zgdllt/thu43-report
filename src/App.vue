@@ -1,29 +1,27 @@
 <template>
   <div id="app" @click.capture.stop="next">
-    <template v-if="isMobile">
-      <FirstPage class="delay box" v-if="step === 1" @start="next"></FirstPage>
-      <SecondPage
-        class="delay box"
-        v-if="step === 2"
-        @click.native="next"
-      ></SecondPage>
-      <ThirdPage class="delay box" v-if="step === 3" @next="next"></ThirdPage>
-      <ForthPage class="delay box" v-if="step === 4" @next="next"></ForthPage>
-      <FifthPage class="delay box" v-if="step === 5" @next="next"></FifthPage>
-      <SixthPage class="delay box" v-if="step === 6" @next="next"></SixthPage>
-      <SeventhPage
-        class="delay box"
-        v-if="step === 7"
-        @next="next"
-      ></SeventhPage>
-      <EighthPage class="delay box" v-if="step === 8" @next="next"></EighthPage>
-      <NinthPage class="delay box" v-if="step === 9" @next="next"></NinthPage>
-      <div v-if="step !== 9" class="footer"></div>
-      <div :class="handleMask"></div>
-    </template>
-    <template v-else> 请用手机查看 </template>
+    <FirstPage class="delay box" v-if="step === 1" @start="next"></FirstPage>
+    <SecondPage
+      class="delay box"
+      v-if="step === 2"
+      @click.native="next"
+    ></SecondPage>
+    <ThirdPage class="delay box" v-if="step === 3" @next="next"></ThirdPage>
+    <ForthPage class="delay box" v-if="step === 4" @next="next"></ForthPage>
+    <FifthPage class="delay box" v-if="step === 5" @next="next"></FifthPage>
+    <SixthPage class="delay box" v-if="step === 6" @next="next"></SixthPage>
+    <SeventhPage
+      class="delay box"
+      v-if="step === 7"
+      @next="next"
+    ></SeventhPage>
+    <EighthPage class="delay box" v-if="step === 8" @next="next"></EighthPage>
+    <NinthPage class="delay box" v-if="step === 9" @next="next"></NinthPage>
+    <div v-if="step !== 9" class="footer"></div>
+    <div :class="handleMask"></div>
   </div>
 </template>
+
 
 <script>
 import FirstPage from "./components/FirstPage";

@@ -1,78 +1,53 @@
 <template>
-  <div>
-    <div class="a">
-      这一年 我们说过最晚的一句话
-      <br />
-      在凌晨
-      <span class="value">
-        {{ hour }}
-      </span>
-      点
-    </div>
-    <div class="b">
-      <span style="font-size: 3.6vw"> {{ user }}: </span>
-      {{ content }}
-    </div>
-    <div class="c">...</div>
-    <div class="d">
-      {{ time }}
-    </div>
-
-    <div class="e" style="padding-top: 5vh; font-size: 5vw">那天在做什么还能记起来吗</div>
+  <div class="page">
+    <h2>Part Three 体育精神</h2>
+    <p class="intro">
+      自43班在体育运动方面硕果累累，全班同学都在身体力行，将“争取为祖国健康工作至少五十年”口号变为现实，更为自动化系“马约翰杯”五连冠立下了汗马功劳。
+    </p>
+    <!-- 新生赤足运动会 -->
+    <section class="section">
+      <h3>新生赤足运动会</h3>
+      <p>参与人数：20/24</p>
+      <img class="single-image" src="~@/assets/report-images/sports-barefoot.jpg" alt="新生赤足运动会" />
+      <p>自43的同学在系内举办各类新生体育比赛时呈现出极高的热情，共有14名同学积极报名并坚持到比赛最后，展现了团结协作的班级风貌。</p>
+    </section>
+    <!-- 项目成绩 -->
+    <section class="section">
+      <h3>赛事成绩</h3>
+      <ul class="awards">
+        <li>陈梓心同学获得自动化系新生毽绳比赛女子一分钟单摇冠军</li>
+        <li>张潇文同学获得自动化系新生乒乓球比赛女单冠军</li>
+      </ul>
+    </section>
+    <!-- 系内运动会 -->
+    <section class="section">
+      <h3>自动化、机械、秀钟三系联合运动会</h3>
+      <img class="single-image" src="~@/assets/report-images/sports-competition.jpg" alt="系内运动会" />
+      <p>自43班同学在比赛中勇夺多项名次，包括女子立定跳远冠军、男子100米冠军、4×100米团体第四、单人篮球罚篮第三、女子100米第三、女子30s单摇第一、男子30s单摇第一。</p>
+    </section>
+    <!-- 马约翰杯 -->
+    <section class="section">
+      <h3>马约翰杯</h3>
+      <p>9名同学踊跃参与，并在练习和比赛中表现出色。班级同学还积极参与志愿服务工作，保障赛事顺利进行。</p>
+      <img class="single-image" src="~@/assets/report-images/mayorhan.jpg" alt="马约翰杯" />
+      <ul class="awards">
+        <li>冯陈泓：男子400米第五、混合4×400米第六</li>
+        <li>李奕欧：男子自由泳甲组第六名、200米混合泳甲组第八名</li>
+        <li>杨博尧：围棋甲组团体第七</li>
+        <li>苏玉昆：200米蛙泳单项甲组第14名</li>
+      </ul>
+    </section>
   </div>
 </template>
-
 <script>
-import { latestMsg } from "@/data.json";
-export default {
-  data() {
-    return {
-      ...latestMsg,
-    };
-  },
-};
+export default { name: 'FifthPage' };
 </script>
-
 <style scoped>
-.a {
-  font-size: 5vw;
-  padding-top: 15vh;
-  animation-name: slide-top;
-  animation-duration: 1s;
-  animation-delay: 0.5s;
-  animation-fill-mode: backwards;
-}
-.b {
-  padding-top: 5vh;
-  white-space: normal;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  line-height: 2;
-  color: ebf45f;
-  animation-name: slide-top;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-fill-mode: backwards;
-}
-.c {
-  animation-name: slide-top;
-  animation-duration: 1s;
-  animation-delay: 1.5s;
-  animation-fill-mode: backwards;
-}
-.d {
-  text-align: right;
-  padding-top: 3vh;
-  font-weight: bolder;
-  animation-name: slide-top;
-  animation-duration: 1s;
-  animation-delay: 2s;
-  animation-fill-mode: backwards;
-}
-.e{
-  animation-name: slide-top;
-  animation-duration: 1s;
-  animation-delay: 2.5s;
-  animation-fill-mode: backwards;
-}
+.page { padding: 5vw; }
+.intro { font-size: 3.5vw; margin-bottom: 4vw; line-height: 1.6; }
+h2 { font-size: 5vw; font-weight: bold; margin-bottom: 3vw; }
+.section { margin-bottom: 6vw; }
+.single-image { width: 80vw; height: auto; margin: 2vw 0; border-radius: 0.5vw; }
+.awards { font-size: 3.5vw; line-height: 1.6; list-style: disc inside; }
+h3 { font-size: 4vw; margin-bottom: 1vw; }
 </style>
